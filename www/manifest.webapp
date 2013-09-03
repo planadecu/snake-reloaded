@@ -1,7 +1,7 @@
 {
   "version": "0.1",
-  "name": "My App",
-  "description": "Your new awesome Open Web App",
+  "name": "Snake Reloaded Multiplayer",
+  "description": "Snake game",
   "launch_path": "/",
   "icons": {
     "16": "/img/icons/mortar-16.png",
@@ -9,8 +9,8 @@
     "128": "/img/icons/mortar-128.png"
   },
   "developer": {
-    "name": "Your Name",
-    "url": "http://yourawesomeapp.com"
+    "name": "Jordi Planadecursach",
+    "url": "http://app.rourevell.com"
   },
   "installs_allowed_from": ["*"],
   "appcache_path": "/cache.manifest",
@@ -18,13 +18,13 @@
     "es": {
       "description": "Su nueva aplicación impresionante Open Web",
       "developer": {
-        "url": "http://yourawesomeapp.com"
+        "url": "http://app.rourevell.com/es"
       }
     },
     "it": {
       "description": "Il vostro nuovo fantastico Open Web App",
       "developer": {
-        "url": "http://yourawesomeapp.com"
+        "url": "http://app.rourevell.com/it"
       }
     }
   },

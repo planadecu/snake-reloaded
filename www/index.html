@@ -17,7 +17,28 @@
     <!-- <button id="install-btn">Install</button>     -->
 
     <!-- Write your application here -->
+    <x-flipbox id="flipbox">
+	<div class="main-card">
+	      <div class="title">
+		<h1>Snake Reloaded</h1>
+	      </div>
 
+	      <div class="buttons">
+		<button id="single">Single</button>
+		<button id="multi">Multi</button>
+	      </div>
+	</div>
+        <div class="action-card">
+		<x-appbar class="action-header">
+		    <button id="back">Back</button>
+		    <header>Snake Reloaded</header>
+		    <button id="restart">Restart</button>
+		</x-appbar>
+		<div>
+		    <canvas id="canvas"></canvas>
+		</div>
+	</div>
+    </x-flipbox>
 
 
 
@@ -26,8 +47,10 @@
          js files. This loads "main.js", which in turn can load other
          files, all handled by require.js:
          http://requirejs.org/docs/api.html#jsfiles -->
+    <script type="text/javascript" src="js/lib/brick.js"></script>
     <script type="text/javascript"
             data-main="js/init.js"
             src="js/lib/require.js"></script>
+	  
   </body>
 </html>
