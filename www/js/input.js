@@ -1,9 +1,14 @@
 
 define(function(require) {
+
+    var $ = require('zepto');
     var pressedKeys = {};
 
+    
     function setKey(event, status) {
-        var code = event.keyCode;
+        var code;
+        if("number" == typeof event) code = event;
+        else code = event.keyCode;
         var key;
 
         switch(code) {
@@ -17,6 +22,10 @@ define(function(require) {
             key = 'RIGHT'; break;
         case 40:
             key = 'DOWN'; break;
+        case 1000:
+            key = 'TOUCH_LEFT'; break;
+        case 1001:
+            key = 'TOUCH_RIGHT'; break;
         default:
             // Convert ASCII codes to letters
             key = String.fromCharCode(code);
@@ -35,6 +44,22 @@ define(function(require) {
 
     window.addEventListener('blur', function() {
         pressedKeys = {};
+    });
+    
+    $('.controls .turnright').bind('touchstart mousedown',function(){
+        setKey(1001, true);
+    });
+    
+    $('.controls .turnright').bind('touchend mouseup mouseout',function(){
+        setKey(1001, false);
+    });
+    
+    $('.controls .turnleft').bind('touchstart mousedown',function(){
+        setKey(1000, true);
+    });
+    
+    $('.controls .turnleft').bind('touchend mouseup mouseout',function(){
+        setKey(1000, false);
     });
 
     return {

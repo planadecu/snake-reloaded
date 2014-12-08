@@ -1,30 +1,37 @@
 {
-  "version": "0.1",
+  "version": "0.2",
   "name": "Snake Reloaded Multiplayer",
-  "description": "Snake game",
-  "launch_path": "/",
+  "description": "Snake game smpartphone version. Eat all the fruits, grow, speed up, turn faster and pass all the levels :D",
+  "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/mortar-16.png",
+    "32": "/img/icons/mortar-32.png",
     "48": "/img/icons/mortar-48.png",
+    "64": "/img/icons/mortar-64.png",
     "128": "/img/icons/mortar-128.png"
   },
   "developer": {
     "name": "Jordi Planadecursach",
-    "url": "http://app.rourevell.com"
+    "url": "http://www.rourevell.com/"
   },
   "installs_allowed_from": ["*"],
-  "appcache_path": "/cache.manifest",
   "locales": {
     "es": {
-      "description": "Su nueva aplicación impresionante Open Web",
+      "description": "El clásico juego de la serpiente modernizado.",
       "developer": {
-        "url": "http://app.rourevell.com/es"
+        "url": "http://www.rourevell.com/es"
       }
     },
-    "it": {
-      "description": "Il vostro nuovo fantastico Open Web App",
+    "en": {
+      "description": "The classical snake game modernized.",
       "developer": {
-        "url": "http://app.rourevell.com/it"
+        "url": "http://www.rourevell.com/es"
+      }
+    },
+    "fr": {
+      "description": "Le jeux classic de la serpente modernizé.",
+      "developer": {
+        "url": "http://www.rourevell.com/fr"
       }
     }
   },

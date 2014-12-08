@@ -5,10 +5,8 @@
 
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <!-- Place favicon.ico in the root directory -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script type="text/javascript" src="phonegap.js"></script>
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -20,29 +18,58 @@
     <x-flipbox id="flipbox">
 	<div class="main-card">
 	      <div class="title">
-		<h1>Snake Reloaded</h1>
+            <h1>Snake Reloaded</h1>
 	      </div>
-
 	      <div class="buttons">
-		<button id="single">Single</button>
-		<button id="multi">Multi</button>
+            <button id="single">Single</button>
+            <button id="multi" >Multi</button>
+            <x-tooltip target-selector="_previousSibling" orientation="bottom" allow-overflow>
+                This feature is not yet ready, soon you will be able to play with your friends.
+            </x-tooltip>
 	      </div>
 	</div>
         <div class="action-card">
+	   <x-layout>
+	      <header>
 		<x-appbar class="action-header">
 		    <button id="back">Back</button>
-		    <header>Snake Reloaded</header>
+		    <header>Snake</header>
 		    <button id="restart">Restart</button>
 		</x-appbar>
-		<div>
-		    <canvas id="canvas"></canvas>
-		</div>
+	      </header>
+	      <section>
+              <canvas id="canvas"></canvas>
+              <div class="stats">
+                <div class="title">Game over</div>
+                <div class="grid">
+                    <div class="section group header">
+                        <div class="col span_1_of_4">Player</div>
+                        <div class="col span_1_of_4">Level</div>
+                        <div class="col span_1_of_4">Points</div>
+                        <div class="col span_1_of_4">Date</div> 
+                    </div>
+                    <script id="stats_row" type="text/html">
+                    <div class="section group {{mine}}">
+                        <div class="col span_1_of_4">{{player}}</div>
+                        <div class="col span_1_of_4">{{level}}</div>
+                        <div class="col span_1_of_4">{{points}}</div>
+                        <div class="col span_1_of_4">{{date}}</div> 
+                    </div>
+                    </script>
+                    <div class="stats_rows">
+                    </div>
+                </div>
+                <div class="action"><button id="replay">Play again</button><button id="share">Share score</button></div>
+              </div>
+              <div class="controls">
+                <div class="turnleft"></div>
+                <div class="turnright"></div>
+              </div>
+	      </section>
+	   </x-layout>
 	</div>
     </x-flipbox>
-
-
-
-
+    <div id="fb-root"></div>
     <!-- Using require.js, a module system for javascript, include the
          js files. This loads "main.js", which in turn can load other
          files, all handled by require.js:

@@ -19,20 +19,36 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('fonts/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 html, body {
     margin: 0;
     padding: 0;
     background-color: #151515;
     max-height: 100%;
+    height: 100%;
+    font-family: OpenSans-SemiBold;
 }
 
 button{
     cursor: pointer;
 }
 
+img{
+    draggable: false;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 #flipbox{
-    height:20em;
+    height:100%;
 }
 .main-card{
     font-family: CommandoCommando;
@@ -42,12 +58,16 @@ button{
     text-align: center;
 }
 
+.main-card x-tooltip{
+    color: black;
+}
+
 .main-card .title{
     font-size: 2em;
     color: orange;
 }
 
-.main-card button {
+.main-card button{
     border-radius: 3px;
     font-size: 1.75em;
     padding: .5em 1em;
@@ -61,7 +81,15 @@ button{
     width: 140px;
 }
 
+.main-card button:active, .main-card button:hover {
+    background-color: #FF4500;  
+}
+
 .main-card button:active {
+    border: 2px solid #999999;
+}
+
+.main-card button:hover {
     border: 2px solid #999999;
 }
 
@@ -87,22 +115,181 @@ button{
     font-family: CommandoCommando;
     font-size: 1.5em;
 }
+
 .action-card button {
     color: white;
     font-weight: bold;
 }
 
 .action-card button:active, .action-card button:hover {
-    background-color: #FF4500;   
+    background-color: #FF4500;  
+}
+
+.action-card section{
+    overflow: hidden;
+}
+
+.controls{
+    bottom: 88px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.controls .turnleft{
+    margin-left: 30px;
+    float: left;
+    width: 80px;
+    height: 61px;
+    opacity: 0.75;
+    background: url('../img/left-small.png') repeat scroll 0 0 transparent;
+}
+
+.controls .turnright{
+    margin-right: 30px;
+    float: right;
+    width: 80px;
+    height: 61px;
+    opacity: 0.75;
+    background: url('../img/right-small.png') repeat scroll 0 0 transparent;
+}
+
+.controls div img{
+    width: 100%;
+    height: 100%;
+}
+
+.stats{
+    top: 10%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    display: none;
 }
 
 
+.stats .title{
+    font-family: CommandoCommando;
+    font-size: 40px;
+    color: #f0f000;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.stats .action{
+    text-align: center;
+}
+
+.stats button{
+    background-color: #222222;
+    border-color: #DDDDDD #999999 #999999 #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 2px;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 12px;
+    padding: 8px;
+    width: 160px;
+}
+
+.stats .grid{
+    padding: 0 6%;
+}
+
+#share{
+    margin-left: 8px;
+}
+
+#replay{
+    margin-right: 8px;
+}
+
+.stats .grid .col{
+    white-space: nowrap;                
+    overflow: hidden; 
+    text-overflow: ellipsis;   
+}
+
+.stats .grid .header{
+    font-weight: bold;
+}
+
+.stats .grid .mine{
+    color: red;
+}
 
 canvas {
     display: block;
     width: 100%;
-    margin-top: 50px;
+    float: left;
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
+}
+
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 0.8%;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+                                               
+					
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.8%;
+}
+.span_2_of_4 {
+	width: 49.6%;
+}
+.span_1_of_4 {
+	width: 24.4%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 300 PIXELS */
+
+@media only screen and (max-width: 300px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.span_4_of_4 {
+		width: 100%; 
+	}
+	.span_3_of_4 {
+		width: 100%; 
+	}
+	.span_2_of_4 {
+		width: 100%; 
+	}
+	.span_1_of_4 {
+		width: 100%;
+	}
 }
